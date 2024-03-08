@@ -43,8 +43,10 @@ class Hangman
 
 
     def make_guess(guess)
+        guess = guess.downcase
+
         if @lives > 0
-            good_guess = @word.first.include? guess.downcase
+            good_guess = @word.first.include? guess
     
             if guess == "exit"
                 puts "Thank you for playing!"
