@@ -22,7 +22,7 @@ post '/guess' do
     end
   end
 
-    post '/reset' do
-        session[:game] = Hangman.new
-        redirect to('/')
-    end
+  post '/reset' do
+    session[:game] = Hangman.new
+    redirect to('/')
+  end
