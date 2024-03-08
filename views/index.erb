@@ -14,14 +14,31 @@
   <script>
     alert("You Win! Winner winner chicken dinner!");
   </script>
-  <div class="circle"></div>
-  <div class="spinner">
-  <div class="rect1"></div>
-  <div class="rect2"></div>
-  <div class="rect3"></div>
-  <div class="rect4"></div>
-  <div class="rect5"></div>
+  <div class="hangman">
+  <div class="base"></div>
+  <div class="stand"></div>
+  <div class="beam"></div>
+  <div class="rope"></div>
+  <div id="bodyParts">
+    <div id="head" class="bodyPart"></div>
+    <div id="body" class="bodyPart"></div>
+    <div id="leftArm" class="bodyPart"></div>
+    <div id="rightArm" class="bodyPart"></div>
+    <div id="leftLeg" class="bodyPart"></div>
+    <div id="rightLeg" class="bodyPart"></div>
+  </div>
 </div>
+<script>
+var incorrectGuesses = <%= game.incorrect_guesses %>; // Replace with your method to get the number of incorrect guesses
+var bodyParts = document.getElementById('bodyParts').children;
+
+for (var i = 0; i < incorrectGuesses; i++) {
+  if (bodyParts[i]) {
+    bodyParts[i].style.display = 'block';
+  }
+}
+</script>
+</div
 <% end %>
     <form method="POST" action="/guess">
         <input type="text" name="guess" />
