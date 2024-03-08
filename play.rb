@@ -93,6 +93,8 @@ class Hangman
         end
     end
 
-
+    def lost?
+        @lives == 0
+    end
     
 end

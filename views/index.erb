@@ -15,7 +15,11 @@
     alert("You Win! Winner winner chicken dinner!");
   </script>
   <% end %>
-
+  <% if game.lives == 0 %>
+  <script>
+    alert("Game Over! The word was <%= game.word.first %>");
+  </script>
+  <% end %>
 <div class="gameOver">
   <div class="hangman">
   <div class="base"></div>
