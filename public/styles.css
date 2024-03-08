@@ -1,0 +1,38 @@
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  #lives, #hint, #teaser {
+    color: #666;
+  }
+  
+  form {
+    margin-top: 20px;
+  }
+  
+  input[type="text"] {
+    padding: 5px;
+    margin-right: 10px;
+  }
+  
+  input[type="submit"] {
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+  }
+  
+  #gameOver {
+    color: red;
+    font-size: 20px;
+  }
+  
+  #gameStatus {
+    color: green;
+    font-size: 20px;
+  }
