@@ -7,3 +7,4 @@ gem 'pg'
 gem 'puma'
 gem 'rake' # Add this line
 gem 'bundler'
+gem 'sinatra-activerecord'
