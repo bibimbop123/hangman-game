@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hangman Game</title>
+    <script src="hangman.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Welcome to Hangman!</h1>
+    <p id="lives">You have <%= game.lives %> lives to start with</p>
+    <p id="hint">Hint: <%= game.word.last %></p>
+    <p id="teaser"><%= game.word_teaser %></p>
+    <form method="POST" action="/guess">
+        <input type="text" name="guess" />
+        <input type="submit" value="Make a guess" />
+    </form>
+    <p id="gameOver" style="display: none;">Game over... better luck next time!</p>
+    <p id="gameStatus"></p>
+</body>
+</html>
