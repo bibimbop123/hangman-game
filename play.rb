@@ -25,6 +25,10 @@ class Hangman
         puts @word_teaser
     end
 
+    def incorrect_guesses
+        @word_teaser.split(' ').count("_")
+        
+    end
 
     def update_teaser last_guess
         new_teaser = @word_teaser.split
@@ -42,7 +46,6 @@ class Hangman
     def make_guess(guess)
         if @lives > 0
             good_guess = @word.first.include? guess
-            
 
             if guess == "exit"
                 puts "Thank you for playing!"
@@ -89,4 +92,13 @@ class Hangman
             return false
         end
     end
+
+    def over
+        if @lives == 0
+            return true
+        else
+            return false
+        end
+    end
+    
 end
