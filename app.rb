@@ -20,5 +20,9 @@ post '/guess' do
     rescue ArgumentError => e
         erb :index, locals: { game: session[:game], message: e.message }
     end
-    
   end
+
+    post '/reset' do
+        session[:game] = Hangman.new
+        redirect to('/')
+    end
