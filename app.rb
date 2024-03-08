@@ -1,4 +1,5 @@
-require 'sinatra'
+require 'sinatra/activerecord/rake'
+require './app' # replace with the file that requires and configures sinatra/activerecord
 require "sinatra/reloader" if development?
 require './play.rb'
 require 'openssl'
