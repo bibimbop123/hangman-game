@@ -81,4 +81,11 @@ class Hangman
         @word_teaser
     end
 
+    def won?    
+        if @word.first == @word_teaser.split.join
+            return true
+        else
+            return false
+        end
+    end
 end

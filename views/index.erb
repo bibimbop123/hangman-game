@@ -10,6 +10,11 @@
     <p id="lives">You have <%= game.lives %> lives to start with</p>
     <p id="hint">Hint: <%= game.word.last %></p>
     <p id="teaser"><%= game.word_teaser %></p>
+    <% if game_won %>
+  <script>
+    alert("You Win! Winner winner chicken dinner!");
+  </script>
+<% end %>
     <form method="POST" action="/guess">
         <input type="text" name="guess" />
         <input type="submit" value="Make a guess" />
