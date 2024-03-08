@@ -62,7 +62,7 @@ class Hangman
                 puts "Sorry... you have #{@lives} lives left"
                 make_guess
             end
-        else
+        elsif @lives == 0
             puts "Game over... better luck next time!"
         end
     end
@@ -93,12 +93,6 @@ class Hangman
         end
     end
 
-    def over
-        if @lives == 0
-            return true
-        else
-            return false
-        end
-    end
+
     
 end

@@ -14,11 +14,7 @@
   <script>
     alert("You Win! Winner winner chicken dinner!");
   </script>
-  <% elsif game_over %>
-  <script>
-    alert("You Lose! Better luck next time!");
-  </script>
-<% end %>
+  <% end %>
 
 <div class="gameOver">
   <div class="hangman">
@@ -45,8 +41,7 @@ for (var i = 0; i < incorrectGuesses; i++) {
   }
 }
 </script>
-</div
-<% end %>
+</div>
     <form method="POST" action="/guess">
         <input type="text" name="guess" />
         <input type="submit" value="Make a guess" />
