@@ -41,3 +41,9 @@ body {
     color: green;
     font-size: 25px;
   }
+  .hangman-part {
+    display: none;
+  }
+  .visible {
+    display: block;
+  }

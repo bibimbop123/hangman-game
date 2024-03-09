@@ -1,8 +1,9 @@
 class Hangman
+    attr_accessor :word, :lives, :word_teaser
 
     def initialize
         @word = words.sample
-        @lives = 7
+        @lives = 6
         @word_teaser = ""
         @word.first.size.times do
             @word_teaser += "_ "
@@ -14,7 +15,7 @@ class Hangman
             ["basketball", "A game played by gentlemen"],
             ["crawling", "We are not walking..."],
             ["eureka", "Remembering special moments"],
-            ["continent", "There are 7 of these"],
+            ["continents", "There are 7 of these"],
             ["potato", "not an onion"]
         ]
     end
@@ -61,6 +62,7 @@ class Hangman
                 end
             else
                 @lives -= 1
+             
                 puts "Sorry... you have #{@lives} lives left"
                 make_guess if @lives > 0
             end

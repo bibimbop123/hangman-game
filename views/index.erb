@@ -21,28 +21,20 @@
   </script>
   <% end %>
 <div class="gameOver">
-  <div class="hangman">
-  <div class="base"></div>
-  <div class="stand"></div>
-  <div class="beam"></div>
-  <div class="rope"></div>
-  <div id="bodyParts">
-    <div id="head" class="bodyPart"></div>
-    <div id="body" class="bodyPart"></div>
-    <div id="leftArm" class="bodyPart"></div>
-    <div id="rightArm" class="bodyPart"></div>
-    <div id="leftLeg" class="bodyPart"></div>
-    <div id="rightLeg" class="bodyPart"></div>
-  </div>
+<div id="hangman">
+<div class="hangman-part" id="head">O</div>
+<div class="hangman-part" id="body">|</div>
+<div class="hangman-part" id="left-arm">/</div>
+<div class="hangman-part" id="right-arm">\</div>
+<div class="hangman-part" id="left-leg">/</div>
+<div class="hangman-part" id="right-leg">\</div>
 </div>
-<script>
-var incorrectGuesses = <%= game.incorrect_guesses %>; // Replace with your method to get the number of incorrect guesses
-var bodyParts = document.getElementById('bodyParts').children;
 
-for (var i = 0; i < incorrectGuesses; i++) {
-  if (bodyParts[i]) {
-    bodyParts[i].style.display = 'block';
-  }
+<script>
+var lives = <%= @lives %>;
+var parts = document.getElementsByClassName('hangman-part');
+for (var i = 0; i < 6 - lives; i++) {
+  parts[i].classList.add('visible');
 }
 </script>
 </div>
