@@ -48,13 +48,13 @@ class Hangman
 
         if @lives > 0
             good_guess = @word.first.include? guess
-    
+
             if guess == "exit"
                 puts "Thank you for playing!"
             elsif good_guess
                 puts "You are correct!"
                 print_teaser guess
-    
+
                 if @word.first == @word_teaser.split.join
                     puts "Congratulations... you have won this round!"
                 else
@@ -62,15 +62,14 @@ class Hangman
                 end
             else
                 @lives -= 1
-             
                 puts "Sorry... you have #{@lives} lives left"
                 make_guess if @lives > 0
             end
         else
             puts "Game over... better luck next time!"
         end
+        @lives
     end
-
 
     def begin
         puts "Welcome to Hangman!"

@@ -31,7 +31,7 @@
 </div>
 
 <script>
-var lives = <%= @lives %>;
+var lives = <%= game.make_guess(guess) %>;
 var parts = document.getElementsByClassName('hangman-part');
 for (var i = 0; i < 6 - lives; i++) {
   parts[i].classList.add('visible');
