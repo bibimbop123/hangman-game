@@ -11,15 +11,17 @@
     <p id="hint">Hint: <%= game.word.last %></p>
     <p id="teaser"><%= game.word_teaser %></p>
     <% if game_won %>
-  <script>
-    alert("You Win! Winner winner chicken dinner!");
-  </script>
+    <script>
+      alert("You Win! Winner winner chicken dinner!");
+    </script>
   <% end %>
+  
   <% if game.lives == 0 %>
-  <script>
-    alert("Game Over! The word was <%= game.word.first %>");
-  </script>
+    <script>
+      alert("Game Over! The word was <%= game.word.first %>");
+    </script>
   <% end %>
+  
 <div id="hangman">
 <div class="hangman-part" id="head">O</div>
 <div class="hangman-part" id="body">|</div>
