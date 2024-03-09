@@ -14,32 +14,37 @@
     <script>
       alert("You Win! Winner winner chicken dinner!");
     </script>
-  <% end %>
+    <% end %>
   
-  <% if game.lives == 0 %>
+    <% if game.lost? %>
     <script>
       alert("Game Over! The word was <%= game.word.first %>");
     </script>
   <% end %>
   
-<div id="hangman">
-<div class="hangman-part" id="head">O</div>
-<div class="hangman-part" id="body">|</div>
-<div class="hangman-part" id="left-arm">/</div>
-<div class="hangman-part" id="right-arm">\</div>
-<div class="hangman-part" id="left-leg">/</div>
-<div class="hangman-part" id="right-leg">\</div>
+    <div id="hangman">
+    <div class="hangman-part" id="head">O</div>
+    <div class="hangman-part" id="body">|</div>
+    <div class="hangman-part" id="left-arm">/</div>
+    <div class="hangman-part" id="right-arm">\</div>
+    <div class="hangman-part" id="left-leg">/</div>
+    <div class="hangman-part" id="right-leg">\</div>
 
-</div>
+    </div>
 
-<script>
-var lives = <%= game.make_guess(guess) %>;
-var parts = document.getElementsByClassName('hangman-part');
-for (var i = 0; i < 6 - lives; i++) {
-  parts[i].classList.add('visible');
-}
-</script>
-</div>
+    <script>
+    var lives = <%= session[:lives] %>;
+    var parts = document.getElementsByClassName('hangman-part');
+  
+    for (var i = 0; i < 6; i++) {
+      if (i < (6 - lives)) {
+        parts[i].classList.add('visible');
+      } else {
+        parts[i].classList.remove('visible');
+      }
+    }
+  </script>
+    </div>
     <form method="POST" action="/guess">
         <input type="text" name="guess" />
         <input type="submit" value="Make a guess" />
@@ -48,6 +53,6 @@ for (var i = 0; i < 6 - lives; i++) {
     <p id="gameStatus"></p>
     <form action="/reset" method="post">
     <input type="submit" value="Play Again">
-  </form>
+    </form>
 </body>
 </html>

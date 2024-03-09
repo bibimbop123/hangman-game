@@ -18,6 +18,7 @@ get '/' do
       guess = params['guess']
       game = session[:game]
       game.make_guess(guess)
+      session[:lives] = game.lives
       game_won = game.won? # Add this line
       redirect to('/')
     rescue ArgumentError => e
