@@ -33,17 +33,24 @@
     </div>
 
     <script>
-    var lives = <%= session[:lives] %>;
-    var parts = document.getElementsByClassName('hangman-part');
+    document.addEventListener("DOMContentLoaded", function () {
+      var lives = <%= game.lives %>;
+      var parts = document.getElementsByClassName('hangman-part');
   
-    for (var i = 0; i < 6; i++) {
-      if (i < (6 - lives)) {
-        parts[i].classList.add('visible');
-      } else {
-        parts[i].classList.remove('visible');
+      updateHangmanParts();
+  
+      function updateHangmanParts() {
+        for (var i = 0; i < 6; i++) {
+          if (i < (6 - lives)) {
+            parts[i].classList.add('visible');
+          } else {
+            parts[i].classList.remove('visible');
+          }
+        }
       }
-    }
+    });
   </script>
+  
     </div>
     <form method="POST" action="/guess">
         <input type="text" name="guess" />
