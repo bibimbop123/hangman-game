@@ -94,3 +94,30 @@ body {
     left: 50%; /* Position the hangman container in the center horizontally */
     transform: translateX(-50%); /* Center the hangman container horizontally */
 }
+
+.hangmanplatform {
+    position: absolute;
+    top: 0px; /* Adjust this value to position the platform */
+    left: 50%; /* Position the platform in the center */
+    transform: translateX(-50%); /* Center the platform horizontally */
+}
+#platform {
+    width: 200px;
+    background-color: #333;
+    border-radius: 3px;
+    position: absolute;
+    top: 0px; /* Adjust this value to position the platform */
+    left: 50%; /* Position the platform in the center */
+    transform: translateX(-50%); /* Center the platform horizontally */
+    font-size: 10px
+}
+
+#rope {
+    width: 10px;
+    height: 30px;
+    background-color: #333;
+    position: absolute;
+    top: 0px; /* Adjust this value to position the rope */
+    left: 50%; /* Position the rope in the center */
+    transform: translateX(-50%); /* Center the rope horizontally */
+}
