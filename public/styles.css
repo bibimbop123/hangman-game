@@ -16,9 +16,9 @@ body {
     color: #666;
   }
   
-  form {
-    margin-top: 20px;
-  }
+  .guessform {
+    margin-top: 200px; /* Adjust this value to create space for the hangman image */
+}
   
   input[type="text"] {
     padding: 5px;
@@ -47,3 +47,50 @@ body {
   .visible {
     display: block;
   }
+
+  .hangman-part {
+    position: absolute;
+}
+
+#head {
+    top:  20px; /* Adjust this value to position the head */
+    left: 50%; /* Position the head in the center */
+    transform: translateX(-50%); /* Center the head horizontally */
+}
+
+#body {
+    top: 40px; /* Adjust this value to position the body below the head */
+    left: 50%; /* Position the body in the center */
+    transform: translateX(-50%); /* Center the body horizontally */
+}
+
+#right-arm {
+    top: 55px; /* Adjust this value to position the left arm */
+    left: 5px; /* Adjust this value to position the left arm */
+}
+
+#left-arm {
+    top: 55px; /* Adjust this value to position the right arm */
+    right: 5px; /* Adjust this value to position the right arm */
+}
+
+#right-leg {
+    top: 70px; /* Adjust this value to position the left leg */
+    left: 5px; /* Adjust this value to position the left leg */
+}
+
+#left-leg {
+    top: 70px; /* Adjust this value to position the right leg */
+    right: 5px; /* Adjust this value to position the right leg */
+}
+#hangman-container {
+  position: relative; /* Set parent container as the reference for absolute positioning */
+}
+
+
+#hangman {
+    position: absolute;
+    top: -1px; /* Move the hangman down by 15px */
+    left: 50%; /* Position the hangman container in the center horizontally */
+    transform: translateX(-50%); /* Center the hangman container horizontally */
+}

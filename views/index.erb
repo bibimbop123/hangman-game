@@ -21,7 +21,7 @@
       alert("Game Over! The word was <%= game.word.first %>");
     </script>
   <% end %>
-  
+  <div id="hangman-container">
     <div id="hangman">
     <div class="hangman-part" id="head">O</div>
     <div class="hangman-part" id="body">|</div>
@@ -29,6 +29,7 @@
     <div class="hangman-part" id="right-arm">\</div>
     <div class="hangman-part" id="left-leg">/</div>
     <div class="hangman-part" id="right-leg">\</div>
+
 
     </div>
 
@@ -52,7 +53,7 @@
   </script>
   
     </div>
-    <form method="POST" action="/guess">
+    <form class="guessform" method="POST" action="/guess">
         <input type="text" name="guess" />
         <input type="submit" value="Make a guess" />
     </form>
